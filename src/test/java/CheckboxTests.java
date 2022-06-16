@@ -22,14 +22,14 @@ public class CheckboxTests extends ConfigTests  {
     }
 
 
-    @Test(timeOut = 10000)
+    @Test(groups = {"FrontEnd"})
     public void uncheck() {
         open("/checkboxes");
         ElementsCollection checkbox1 = $$("input[type=checkbox]");
         checkbox1.forEach(el -> el.setSelected(false));
         softAssert.assertTrue(checkbox1.get(0).is(Condition.checked));
     }
-    @Test(dependsOnMethods = {"uncheck"}, alwaysRun = true)
+    @Test(groups = {"BackEnd"})
     public void check() {
         open("/checkboxes");
         ElementsCollection checkbox2 =  $$("input[type=checkbox]");

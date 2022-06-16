@@ -2,20 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite1" thread-count="3" parallel="classes" >
+   <!-- <listeners>
+        <listener class-name="AnnotationTransformer"/>
+    </listeners>-->
     <test name="CheckBox" >
+        <groups>
+            <run>
+                <include name=".*End"/>
+            </run>
+        </groups>
+
         <classes>
             <class name="CheckboxTests" />
-        </classes>
-    </test>
-
-    <test name="RadioButton">
-        <classes>
-            <class name="RadioButtonTests">
+            <class name="RadioButtonTests" >
             <methods>
                 <include name="YesRadioButton" />
                 <exclude name="NoRadioButton"></exclude>
             </methods>
-        </class>
-            </classes>
+            </class>
+        </classes>
     </test>
 </suite>
