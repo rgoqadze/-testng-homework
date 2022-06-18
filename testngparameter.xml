@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" >
+    <parameter name="FirstName" value="Michael"></parameter>
+    <parameter name="LastName" value="Brown"></parameter>
+    <parameter name="MobileNumber" value="123456789"></parameter>
+    <test name="Parameters" >
+        <classes>
+            <class name="TestNGParametrization" >
+            </class>
+        </classes>
+    </test>
+</suite>
